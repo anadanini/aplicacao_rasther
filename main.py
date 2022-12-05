@@ -1,14 +1,6 @@
 import PySimpleGUIQt as sg
 
-import requests
-
-#Funções
-def requisitardados():
-    requisicao = requests.api.get("http://service.tecnomotor.com.br/iRasther/tipo?pm.platform=1&pm.version=23")
-    json = requisicao.json()
-    return json
-
-
+import ReqCategoria
 
 #Tema da interface
 sg.theme("DarkTeal6")
@@ -16,7 +8,7 @@ sg.theme("DarkTeal6")
 
 layout = [
     [sg.Text("Categoria")],
-    [sg.Listbox(requisitardados())],
+    [sg.Listbox(ReqCategoria.requisitardados())],
     [sg.Button("Selecionar"),sg.Button("Cancelar")]
 
 ]
